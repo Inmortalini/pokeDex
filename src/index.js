@@ -35,7 +35,7 @@ async function pokeRender() {
           title.textContent =
             data.name[0].toUpperCase() + data.name.substring(1);
 
-          title.className = "font-bold text-red-500 text-base";
+          title.className = "font-bold text-red-500 text-base gradient-title";
 
           const ability = document.createElement("p");
           ability.textContent =

@@ -9,9 +9,21 @@
   margin: 1%;
   float: left;
   align-items: center;
-  border-top-left-radius: 5px;
+  border-radius: 5px;
 }
 .card:hover{
     background-color: rgb(239, 246, 143);
 
 }
+.gradient-title {
+    background: linear-gradient(to right, #ff0000, #000000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    position: relative;
+  }
+  
+ 
+  
