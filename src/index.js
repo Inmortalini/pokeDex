@@ -23,35 +23,37 @@ async function pokeRender() {
       fetch(url)
         .then((response) => response.json())
         .then((data) => {
-        //   let element = document.createElement("div");
           const container = document.createElement("div");
-          container.className='text-center md:text-left card';
+          container.className = "flex items-center justify-between card ";
 
           const image = document.createElement("img");
-          image.src=data.sprites.front_default;
-          image.className='shadow-lg h-16 w-16 md:h-24 md:w-24 rounded-full mx-auto md:mx-0 md:mr-6'
+          image.src = data.sprites.front_default;
+          image.className =
+            "shadow-lg h-16 w-16 md:h-24 md:w-24 rounded-full mx-auto md:mx-0 md:mr-6";
 
           const title = document.createElement("h2");
-          title.textContent = data.name[0].toUpperCase()+data.name.substring(1);
-         
-          title.className="font-bold text-red-600"
-          
+          title.textContent =
+            data.name[0].toUpperCase() + data.name.substring(1);
+
+          title.className = "font-bold text-red-500 text-base";
 
           const ability = document.createElement("p");
-          ability.textContent=data.abilities[0].ability.name+' , '+data.abilities[1].ability.name+' and '+ data.abilities[2].ability.name
-         ability.className="text-gray-600"
-        //   element.innerHTML = `
-        //       <h1>name:${data.name}</h1>
-        //       <img src='${data.sprites.front_default}'></img>
-        //       <p>first ability:${data.abilities[0].ability.name}</>
-        //     `;
-        
-          container.append(image, title, ability);
+          ability.textContent =
+            "Abilitys: " +
+            data.abilities[0].ability.name +
+            " , " +
+            data.abilities[1].ability.name +
+            " and " +
+            data.abilities[2].ability.name;
+          ability.className = "text-gray-400 text-sm";
+
+          const infoCard = document.createElement("div");
+          infoCard.append(title, ability);
+
+          container.append(image, infoCard);
           pokeArr.push(container);
 
-        //   document.getElementById("central").appendChild(element);
           document.getElementById("central").append(...pokeArr);
-          
         })
 
         .catch((err) => console.log(err));

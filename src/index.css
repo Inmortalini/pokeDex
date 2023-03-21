@@ -2,6 +2,16 @@
 @import "tailwindcss/dist/components.css";
 @import "tailwindcss/dist/utilities.css";
 
-.card{
-    border: 1px solid #afadad
+.card {
+    border: 1px solid #817d7d;
+  width: 30%;
+  height: 150px;
+  margin: 1%;
+  float: left;
+  align-items: center;
+  border-top-left-radius: 5px;
+}
+.card:hover{
+    background-color: rgb(239, 246, 143);
+
 }
